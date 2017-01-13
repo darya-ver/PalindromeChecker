@@ -16,21 +16,13 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  //your code here
-  // for (int i = 0 ; i<sString.length(); i++)
-  //   if(Character.isLetter(sString.charAt(i)))
-  //     d++;
-
-  String answer = new String();
+String answer = new String();
   for(int i = 0; i<word.length(); i++)
-    if(word.charAt(i)!=' ' || Character.isLetter(word.charAt(i)))
+    if(word.charAt(i)!=' ' && Character.isLetter(word.charAt(i)))
       answer += word.charAt(i);
-
-  String answer2 = new String();
-  for (int i = answer.length()-1; i>=0; i--)
-  {
-    answer2 += answer.charAt(i);
-  }
+  
+  answer = answer.toLowerCase();
+  String answer2 = reverse(answer);
   return answer2.equals(answer);
 }
 
